@@ -55,13 +55,30 @@ void generosMusicales(){
 
         break;
       case "2":
-        //TODO
+        String? genero = stdin.readLineSync();
+        if(genero==null || genero=='') {
+          print('Tiene que ingresar un valor');
+        }else{
+          if(generos.isNotEmpty){
+            if(generos.contains(genero)) {
+              print('El genero $genero ha sido borrado');
+              generos.remove(genero);
+            }else{
+              print('El genero $genero no esta en la lista');
+            }
+          }else{
+            print('No hay generos añadidos');
+          }
+        }
         break;
       case "3":
+        print('Sus generos favoritos son: $generos');
         break;
       case "0":
+        print('Adios');
         break;
       default:
+        print('Opcion incorrecta');
         break;
     }
 
